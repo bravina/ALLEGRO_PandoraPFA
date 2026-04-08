@@ -188,15 +188,15 @@ tracksFromGenParticles = TracksFromGenParticles("CreateTracksFromGenParticles",
                                                     OutputLevel = INFO)
 TopAlg += [tracksFromGenParticles]
 
-### Muon Hits
-from Configurables import MuonCaloHitDigi
-MuonCaloHitDigitizer = MuonCaloHitDigi("MuonCaloHitDigitizer",
-    inputSimHits = "MuonTaggerPhiTheta",
-    outputDigiHits = "MuonCaloHitCollection",
-    readoutName = "MuonTaggerPhiTheta",
-    OutputLevel = INFO,
-)
-TopAlg += [MuonCaloHitDigitizer]
+### Muon Hits (disabled - MuonCaloHitDigi not available in current nightly)
+#from Configurables import MuonCaloHitDigi
+#MuonCaloHitDigitizer = MuonCaloHitDigi("MuonCaloHitDigitizer",
+#    inputSimHits = "MuonTaggerPhiTheta",
+#    outputDigiHits = "MuonCaloHitCollection",
+#    readoutName = "MuonTaggerPhiTheta",
+#    OutputLevel = INFO,
+#)
+#TopAlg += [MuonCaloHitDigitizer]
 
 ## Clustering
 if doSWClustering or doTopoClustering:
